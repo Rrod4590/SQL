@@ -1,0 +1,33 @@
+CREATE TABLE Store(ID INTEGER, Name TEXT, Brand TEXT, Aisle INTEGER, Price INTEGER);
+INSERT INTO Store VALUES(1, "Tillamook Vanilla Bean Ice Cream", "Skinny Cow", 35, 5.29);
+INSERT INTO Store VALUES(2, "Tropicana Pure Premium No Pulp Orange Juice", "Tropicana", 36, 4.19);
+INSERT INTO Store VALUES(3, "Ben & Jerry's Cherry Garcia Ice Cream - 16oz", "Ben & Jerry", 35, 5.19);
+INSERT INTO Store VALUES(4, "OREO Chocolate Sandwich Cookies Family Size - 19.1oz", "Oreos", 29, 4.59);
+INSERT INTO Store VALUES(5,"Dasani Purified Water - 24pk/16.9 fl oz Bottles", "Dasani", 37, 5.99);
+INSERT INTO Store VALUES(6, "Twining's Lemon & Ginger Tea - 50ct", "Twinings", 47, 7.69);
+INSERT INTO Store VALUES(7, "M&M's Variety Pack Fun Size Chocolate Candy Assortment - 55pc", "M&M", 27, 15.49);
+INSERT INTO Store VALUES(8, "Dannon Whole Milk Non-GMO Project Verified Plain Yogurt - 32oz Tub", "Dannon", 10, 3.69);
+INSERT INTO Store VALUES(9, "Old El Paso Traditional Refried Beans - 16oz", "Old El Paso" , 18, 1.99);
+INSERT INTO Store VALUES(10, "Special K Red Berries Breakfast Cereal - 16.9oz", "Kellogg's", 21, 4.99);
+INSERT INTO Store VALUES(11, "Red Bull Energy Drink", "Red Bull", 37, 10.99);
+INSERT INTO Store VALUES(12, "Essentia Drinking Water Ionized", "Nestlle", 37, 2.50);
+INSERT INTO Store VALUES(13, "BUSH'S BEST Cannelini Beans", "Great Northen Beans", 18, 2.19);
+INSERT INTO Store VALUES(14, "Country Crock Shedds Spread Buttery Spread", "Country Crock", 36, 3.69);
+INSERT INTO Store VALUES(15, "Unreal Choc Drk Ccnt Bar Bag", "UNREAL", 47, 4.99);
+SELECT * FROM Store;
+--Create a grocery store database
+
+--display the database ordered by price. 
+SELECT * FROM store
+ORDER BY price desc; 
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(price) "avg bulk item price"
+FROM store
+where section='bulk'; 
+
+--what are the most 5 popular items? 
+SELECT item, price, popularity
+FROM store
+order by popularity desc
+limit 5; 
